@@ -9,7 +9,7 @@ const PostOffices = ({ pincode, data }) => {
   );
 
   return (
-    <div className="w-full max-w-4xl">
+    <div className="w-full max-w-5xl">
       <h1 className="text-2xl mb-2">
         <span className="font-bold">PinCode:</span> {pincode}
       </h1>
@@ -25,11 +25,17 @@ const PostOffices = ({ pincode, data }) => {
         className="w-full border p-3 rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
 
-      <div className="grid md:grid-cols-2 gap-4">
-        {filteredPostOffices.map((postOffice) => (
-          <PostCard key={postOffice.Name} postOffice={postOffice} />
-        ))}
-      </div>
+      {filteredPostOffices.length === 0 ? (
+        <p className="text-red-500 text-lg">
+          Couldn’t find the postal data you’re looking for…
+        </p>
+      ) : (
+        <div className="grid md:grid-cols-2 gap-4">
+          {filteredPostOffices.map((postOffice) => (
+            <PostCard key={postOffice.Name} postOffice={postOffice} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

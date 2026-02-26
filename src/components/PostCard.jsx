@@ -9,16 +9,20 @@ const PostCard = ({ postOffice }) => {
         <span className="font-semibold">Branch Type:</span>{" "}
         {postOffice.BranchType}
       </p>
+
       <p>
         <span className="font-semibold">Delivery Status:</span>{" "}
         {postOffice.DeliveryStatus}
       </p>
+
       <p>
         <span className="font-semibold">District:</span> {postOffice.District}
       </p>
+
       <p>
         <span className="font-semibold">Division:</span> {postOffice.Division}
       </p>
+
       <p>
         <span className="font-semibold">State:</span> {postOffice.State}
       </p>
